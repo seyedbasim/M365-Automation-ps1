@@ -1,0 +1,14 @@
+$exchangeSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "https://outlook.office365.com/powershell-liveid/" -Credential $credential -Authentication "Basic" -AllowRedirection
+Import-PSSession $exchangeSession -DisableNameChecking
+$File = "C:\users\basim\desktop\GroupList.txt"
+"UPN,Group,GroupEmailAddress" >> $file
+
+$UPNs = Import-Csv "C:\Users\Basim\Documents\H-ONe\Scripts\Deleted Users - Midassafety Inc.csv"
+$UPNs | ForEach-Object{
+   $user = get-user $_.UserPrincipalName
+   $dn = Get-User $user.UserPrincipalName | select -ExpandProperty DistinguishedName
+   $gl = Get-Recipient -Filter "Members -eq '$dn'" -RecipientTypeDetails GroupMailbox,MailUniversalDistributionGroup,MailUniversalSecurityGroup
+   $gl | ForEach-Object {
+      $user.UserPrincipalName + "," + $_.DisplayName + "," + $_.PrimarySmtpAddress >> $file
+   }
+}

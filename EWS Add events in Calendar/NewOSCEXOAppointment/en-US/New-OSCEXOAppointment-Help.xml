@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:maml="http://schemas.microsoft.com/maml/2004/10">
+    <command:details>
+      <command:name>New-OSCEXOAppointment</command:name>
+      <maml:description>
+        <maml:para>Creates new appointments.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para></maml:para>
+      </maml:copyright>
+      <command:verb>New</command:verb>
+      <command:noun>OSCEXOAppointment</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>The New-OSCEXOAppointment will attempt to create new appointments in the default Calendar folder for mailbox users.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <!-- ParameterSet: NoRecurrence -->
+      <command:syntaxItem>
+        <maml:name>New-OSCEXOAppointment</maml:name>
+        <command:parameter globbing="false" variableLength="false" position="1" required="true" pipelineInput="false">
+          <maml:name>Identity</maml:name>
+          <maml:description>
+            <maml:para>Specifies the identity of the mailbox. You can use alias or SMTP address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="2" required="true" pipelineInput="false">
+          <maml:name>Subject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the subject of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="3" required="false" pipelineInput="false">
+          <maml:name>Location</maml:name>
+          <maml:description>
+            <maml:para>Specifies the location of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="4" required="false" pipelineInput="false">
+          <maml:name>Body</maml:name>
+          <maml:description>
+            <maml:para>Specifies the body of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="5" required="false" pipelineInput="false">
+          <maml:name>StartDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the start date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="6" required="false" pipelineInput="false">
+          <maml:name>EndDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the end date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>AllDayEvent</maml:name>
+          <maml:description>
+            <maml:para>Indicates the appointment is an all day event.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>UseImpersonation</maml:name>
+          <maml:description>
+            <maml:para>Indicates to use Impersonation when creating an appointment for a user.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <!-- ParameterSet: DailyRecurrence -->
+      <command:syntaxItem>
+        <maml:name>New-OSCEXOAppointment</maml:name>
+        <command:parameter globbing="false" variableLength="false" position="1" required="true" pipelineInput="false">
+          <maml:name>Identity</maml:name>
+          <maml:description>
+            <maml:para>Specifies the identity of the mailbox. You can use alias or SMTP address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="2" required="true" pipelineInput="false">
+          <maml:name>Subject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the subject of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="3" required="false" pipelineInput="false">
+          <maml:name>Location</maml:name>
+          <maml:description>
+            <maml:para>Specifies the location of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="4" required="false" pipelineInput="false">
+          <maml:name>Body</maml:name>
+          <maml:description>
+            <maml:para>Specifies the body of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="5" required="false" pipelineInput="false">
+          <maml:name>StartDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the start date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="6" required="false" pipelineInput="false">
+          <maml:name>EndDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the end date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>AllDayEvent</maml:name>
+          <maml:description>
+            <maml:para>Indicates the appointment is an all day event.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>UseImpersonation</maml:name>
+          <maml:description>
+            <maml:para>Indicates to use Impersonation when creating an appointment for a user.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>Interval</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of days between each occurrence.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeStart</maml:name>
+          <maml:description>
+            <maml:para>Specifies the date and time when the recurrence start.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeEndAfter</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of occurrences after which the recurrence ends.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeEndBy</maml:name>
+          <maml:description>
+            <maml:para>Specifies the date after which the recurrence ends.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <!-- ParameterSet: WeeklyRecurrence -->
+      <command:syntaxItem>
+        <maml:name>New-OSCEXOAppointment</maml:name>
+        <command:parameter globbing="false" variableLength="false" position="1" required="true" pipelineInput="false">
+          <maml:name>Identity</maml:name>
+          <maml:description>
+            <maml:para>Specifies the identity of the mailbox. You can use alias or SMTP address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="2" required="true" pipelineInput="false">
+          <maml:name>Subject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the subject of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="3" required="false" pipelineInput="false">
+          <maml:name>Location</maml:name>
+          <maml:description>
+            <maml:para>Specifies the location of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="4" required="false" pipelineInput="false">
+          <maml:name>Body</maml:name>
+          <maml:description>
+            <maml:para>Specifies the body of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="5" required="false" pipelineInput="false">
+          <maml:name>StartDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the start date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="6" required="false" pipelineInput="false">
+          <maml:name>EndDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the end date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>AllDayEvent</maml:name>
+          <maml:description>
+            <maml:para>Indicates the appointment is an all day event.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>UseImpersonation</maml:name>
+          <maml:description>
+            <maml:para>Indicates to use Impersonation when creating an appointment for a user.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>Interval</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of days between each occurrence.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>DayOfMonth</maml:name>
+          <maml:description>
+            <maml:para>Specifies the day of the month when each occurrence happens.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeStart</maml:name>
+          <maml:description>
+            <maml:para>Specifies the date and time when the recurrence start.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeEndAfter</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of occurrences after which the recurrence ends.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeEndBy</maml:name>
+          <maml:description>
+            <maml:para>Specifies the date after which the recurrence ends.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <!-- ParameterSet: MonthlyRecurrence -->
+      <command:syntaxItem>
+        <maml:name>New-OSCEXOAppointment</maml:name>
+        <command:parameter globbing="false" variableLength="false" position="1" required="true" pipelineInput="false">
+          <maml:name>Identity</maml:name>
+          <maml:description>
+            <maml:para>Specifies the identity of the mailbox. You can use alias or SMTP address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="2" required="true" pipelineInput="false">
+          <maml:name>Subject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the subject of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="3" required="false" pipelineInput="false">
+          <maml:name>Location</maml:name>
+          <maml:description>
+            <maml:para>Specifies the location of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="4" required="false" pipelineInput="false">
+          <maml:name>Body</maml:name>
+          <maml:description>
+            <maml:para>Specifies the body of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="5" required="false" pipelineInput="false">
+          <maml:name>StartDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the start date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="6" required="false" pipelineInput="false">
+          <maml:name>EndDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the end date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>AllDayEvent</maml:name>
+          <maml:description>
+            <maml:para>Indicates the appointment is an all day event.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>UseImpersonation</maml:name>
+          <maml:description>
+            <maml:para>Indicates to use Impersonation when creating an appointment for a user.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>Interval</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of days between each occurrence.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>Month</maml:name>
+          <maml:description>
+            <maml:para>Specifies the month of the year each occurrence happens.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.DayOfTheWeek</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>DayOfMonth</maml:name>
+          <maml:description>
+            <maml:para>Specifies the day of the month each occurrence happens.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.DayOfTheWeekIndex</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeStart</maml:name>
+          <maml:description>
+            <maml:para>Specifies the date and time when the recurrence start.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeEndAfter</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of occurrences after which the recurrence ends.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeEndBy</maml:name>
+          <maml:description>
+            <maml:para>Specifies the date after which the recurrence ends.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <!-- ParameterSet: RelativelyMonthlyRecurrence -->
+      <command:syntaxItem>
+        <maml:name>New-OSCEXOAppointment</maml:name>
+        <command:parameter globbing="false" variableLength="false" position="1" required="true" pipelineInput="false">
+          <maml:name>Identity</maml:name>
+          <maml:description>
+            <maml:para>Specifies the identity of the mailbox. You can use alias or SMTP address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="2" required="true" pipelineInput="false">
+          <maml:name>Subject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the subject of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="3" required="false" pipelineInput="false">
+          <maml:name>Location</maml:name>
+          <maml:description>
+            <maml:para>Specifies the location of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="4" required="false" pipelineInput="false">
+          <maml:name>Body</maml:name>
+          <maml:description>
+            <maml:para>Specifies the body of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="5" required="false" pipelineInput="false">
+          <maml:name>StartDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the start date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="6" required="false" pipelineInput="false">
+          <maml:name>EndDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the end date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>AllDayEvent</maml:name>
+          <maml:description>
+            <maml:para>Indicates the appointment is an all day event.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>UseImpersonation</maml:name>
+          <maml:description>
+            <maml:para>Indicates to use Impersonation when creating an appointment for a user.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>Interval</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of days between each occurrence.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>DayOfTheWeek</maml:name>
+          <maml:description>
+            <maml:para>Specifies the day of the week each occurrence happens.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.DayOfTheWeek</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>DayOfTheWeekIndex</maml:name>
+          <maml:description>
+            <maml:para>Specifies the relative position of the day within the month.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.DayOfTheWeekIndex</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeStart</maml:name>
+          <maml:description>
+            <maml:para>Specifies the date and time when the recurrence start.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeEndAfter</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of occurrences after which the recurrence ends.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeEndBy</maml:name>
+          <maml:description>
+            <maml:para>Specifies the date after which the recurrence ends.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <!-- ParameterSet: YearlyRecurrence -->
+      <command:syntaxItem>
+        <maml:name>New-OSCEXOAppointment</maml:name>
+        <command:parameter globbing="false" variableLength="false" position="1" required="true" pipelineInput="false">
+          <maml:name>Identity</maml:name>
+          <maml:description>
+            <maml:para>Specifies the identity of the mailbox. You can use alias or SMTP address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="2" required="true" pipelineInput="false">
+          <maml:name>Subject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the subject of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="3" required="false" pipelineInput="false">
+          <maml:name>Location</maml:name>
+          <maml:description>
+            <maml:para>Specifies the location of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="4" required="false" pipelineInput="false">
+          <maml:name>Body</maml:name>
+          <maml:description>
+            <maml:para>Specifies the body of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="5" required="false" pipelineInput="false">
+          <maml:name>StartDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the start date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="6" required="false" pipelineInput="false">
+          <maml:name>EndDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the end date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>AllDayEvent</maml:name>
+          <maml:description>
+            <maml:para>Indicates the appointment is an all day event.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>UseImpersonation</maml:name>
+          <maml:description>
+            <maml:para>Indicates to use Impersonation when creating an appointment for a user.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>Interval</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of days between each occurrence.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>Month</maml:name>
+          <maml:description>
+            <maml:para>Specifies the month of the year each occurrence happens.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.Month</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>DayOfMonth</maml:name>
+          <maml:description>
+            <maml:para>Specifies the day of the month each occurrence happens.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.DayOfMonth</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeStart</maml:name>
+          <maml:description>
+            <maml:para>Specifies the date and time when the recurrence start.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeEndAfter</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of occurrences after which the recurrence ends.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeEndBy</maml:name>
+          <maml:description>
+            <maml:para>Specifies the date after which the recurrence ends.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <!-- ParameterSet: RelativelyYearlyRecurrence -->
+      <command:syntaxItem>
+        <maml:name>New-OSCEXOAppointment</maml:name>
+        <command:parameter globbing="false" variableLength="false" position="1" required="true" pipelineInput="false">
+          <maml:name>Identity</maml:name>
+          <maml:description>
+            <maml:para>Specifies the identity of the mailbox. You can use alias or SMTP address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="2" required="true" pipelineInput="false">
+          <maml:name>Subject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the subject of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="3" required="false" pipelineInput="false">
+          <maml:name>Location</maml:name>
+          <maml:description>
+            <maml:para>Specifies the location of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="4" required="false" pipelineInput="false">
+          <maml:name>Body</maml:name>
+          <maml:description>
+            <maml:para>Specifies the body of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="5" required="false" pipelineInput="false">
+          <maml:name>StartDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the start date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="6" required="false" pipelineInput="false">
+          <maml:name>EndDate</maml:name>
+          <maml:description>
+            <maml:para>Specifies the end date of an appointment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>AllDayEvent</maml:name>
+          <maml:description>
+            <maml:para>Indicates the appointment is an all day event.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>UseImpersonation</maml:name>
+          <maml:description>
+            <maml:para>Indicates to use Impersonation when creating an appointment for a user.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>Interval</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of days between each occurrence.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>Month</maml:name>
+          <maml:description>
+            <maml:para>Specifies the month of the year each occurrence happens.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.Month</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>DayOfTheWeek</maml:name>
+          <maml:description>
+            <maml:para>Specifies the day of the week each occurrence happens.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.DayOfTheWeek</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>DayOfTheWeekIndex</maml:name>
+          <maml:description>
+            <maml:para>Specifies the day of the week each occurrence happens.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.DayOfTheWeekIndex</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeStart</maml:name>
+          <maml:description>
+            <maml:para>Specifies the date and time when the recurrence start.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeEndAfter</maml:name>
+          <maml:description>
+            <maml:para>Specifies the number of occurrences after which the recurrence ends.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+          <maml:name>RecurrenceRangeEndBy</maml:name>
+          <maml:description>
+            <maml:para>Specifies the date after which the recurrence ends.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter globbing="false" variableLength="false" position="1" required="true" pipelineInput="false">
+        <maml:name>Identity</maml:name>
+        <maml:description>
+          <maml:para>Specifies the identity of the mailbox. You can use alias or SMTP address.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="2" required="true" pipelineInput="false">
+        <maml:name>Subject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the subject of an appointment.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="3" required="false" pipelineInput="false">
+        <maml:name>Location</maml:name>
+        <maml:description>
+          <maml:para>Specifies the location of an appointment.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="4" required="false" pipelineInput="false">
+        <maml:name>Body</maml:name>
+        <maml:description>
+          <maml:para>Specifies the body of an appointment.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="5" required="false" pipelineInput="false">
+        <maml:name>StartDate</maml:name>
+        <maml:description>
+          <maml:para>Specifies the start date of an appointment.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        <dev:type>
+          <maml:name>datetime</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="6" required="false" pipelineInput="false">
+        <maml:name>EndDate</maml:name>
+        <maml:description>
+          <maml:para>Specifies the end date of an appointment.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        <dev:type>
+          <maml:name>datetime</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+        <maml:name>AllDayEvent</maml:name>
+        <maml:description>
+          <maml:para>Indicates whether this appointment is an all day event.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        <dev:type>
+          <maml:name>switch</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+        <maml:name>UseImpersonation</maml:name>
+        <maml:description>
+          <maml:para>Indicates to use Impersonation when creating an appointment.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+        <dev:type>
+          <maml:name>switch</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+        <maml:name>RecurrenceRangeStart</maml:name>
+        <maml:description>
+          <maml:para>Specifies the date and time when the recurrence start.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        <dev:type>
+          <maml:name>datetime</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+        <maml:name>RecurrenceRangeEndAfter</maml:name>
+        <maml:description>
+          <maml:para>Specifies the number of occurrences after which the recurrence ends.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        <dev:type>
+          <maml:name>int</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+        <maml:name>RecurrenceRangeEndBy</maml:name>
+        <maml:description>
+          <maml:para>Specifies the date after which the recurrence ends.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">datetime</command:parameterValue>
+        <dev:type>
+          <maml:name>datetime</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="named" required="true" pipelineInput="false">
+        <maml:name>Interval</maml:name>
+        <maml:description>
+          <maml:para>Specifies the number of days between each occurrence.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        <dev:type>
+          <maml:name>int</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="named" required="true" pipelineInput="false">
+        <maml:name>DayOfTheWeek</maml:name>
+        <maml:description>
+          <maml:para>Specifies the day of the week each occurrence happens.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.DayOfTheWeek </command:parameterValue>
+        <dev:type>
+          <maml:name>Microsoft.Exchange.WebServices.Data.DayOfTheWeek </maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="named" required="false" pipelineInput="false">
+        <maml:name>Month</maml:name>
+        <maml:description>
+          <maml:para>Specifies the month of the year each occurrence happens.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.Month</command:parameterValue>
+        <dev:type>
+          <maml:name>Microsoft.Exchange.WebServices.Data.Month</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="named" required="true" pipelineInput="false">
+        <maml:name>DayOfMonth</maml:name>
+        <maml:description>
+          <maml:para>Specifies the day of the month each occurrence happens.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+        <dev:type>
+          <maml:name>int</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="named" required="true" pipelineInput="false">
+        <maml:name>DayOfTheWeekIndex</maml:name>
+        <maml:description>
+          <maml:para>Specifies the day of the week each occurrence happens.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Exchange.WebServices.Data.DayOfTheWeekIndex </command:parameterValue>
+        <dev:type>
+          <maml:name>Microsoft.Exchange.WebServices.Data.DayOfTheWeekIndex </maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description></maml:description>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description></maml:description>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title>Tips to Use New-OSCEXOAppointment</maml:title>
+      <maml:alert>
+        <maml:para>You need to add proper permission to the default Calendar folder for each mailbox user.</maml:para>
+      </maml:alert>
+      <maml:alert>
+        <maml:para>The appointment is created and saved to the default Calendar folder. You cannot change it.</maml:para>
+      </maml:alert>
+      <maml:alert>
+        <maml:para>The default value of StartDate, EndDate and RecurrenceRangeStart is generated automatically in the same manner as what you see in Outlook Web App.</maml:para>
+      </maml:alert>
+      <maml:alert>
+        <maml:para>It's recommended to use Show-Command cmdlet that is available in Windows PowerShell V3 to understand the different parameters and parameter sets of New-OSCEXOAppointment</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>PS C:\&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>New-OSCEXOAppointment -Identity johnd -Subject "Company Event" -Location "Meeting Room" -Body "Company Event"</dev:code>
+        <dev:remarks>
+          <maml:para>Description</maml:para>
+          <maml:para>-----------</maml:para>
+          <maml:para>Creates an appointment in the default Calendar for mailbox user John Doe (johnd).</maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText></command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>PS C:\&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>New-OSCEXOAppointment -Identity johnd -Subject "Company Event" -Location "Meeting Room" -Body "Company Event" -UseImpersonation</dev:code>
+        <dev:remarks>
+          <maml:para>Description</maml:para>
+          <maml:para>-----------</maml:para>
+          <maml:para>Creates an appointment in the default Calendar for mailbox user John Doe (johnd) by using impersonation.</maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText></command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>PS C:\&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>"johnd","janed" | New-OSCEXOAppointment -Subject "Company Holiday" -Body "Company Holiday" -AllDayEvent </dev:code>
+        <dev:remarks>
+          <maml:para>Description</maml:para>
+          <maml:para>-----------</maml:para>
+          <maml:para>Creates an all-day event in the default Calendar folder for the mailbox users John Doe (johnd) and Jane Doe (janed).</maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText></command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 4 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>PS C:\&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>New-OSCEXOAppointment -Identity johnd -Subject "Company Event" -DayOfTheWeek Friday -Interval 2 -RecurrenceRangeEndAfter 2</dev:code>
+        <dev:remarks>
+          <maml:para>Description</maml:para>
+          <maml:para>-----------</maml:para>
+          <maml:para>Creates a recurrence appointment in the default Calendar for mailbox user John Doe (johnd).</maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText></command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Windows PowerShell Advanced Function</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Creating appointments and meetings by using the EWS Managed API</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Working with recurring calendar items by using the EWS Managed API</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+</helpItems>

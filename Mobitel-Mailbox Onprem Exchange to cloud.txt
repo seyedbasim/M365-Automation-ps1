@@ -1,0 +1,44 @@
+$mailboxes = Import-Csv 'F:\PSTBackup\mobitel2.csv'
+
+foreach($mailbox in $mailboxes){
+$UPN = $mailbox.userPrincipalName
+$sam = $mailbox.sam
+$guid = $mailbox.guid
+try{
+New-MailboxExportRequest -Mailbox $UPN -FilePath "\\ho-wex-mail1\F$\PSTBackup\$sam.pst" -ErrorAction Stop
+
+$MailboxStatus = Get-MailboxExportRequest -Mailbox $UPN
+
+Write-Host "User $sam is Exporting"
+
+while(!($MailboxStatus.status -eq "Completed")){
+$MailboxStatus = Get-MailboxExportRequest -Mailbox $UPN
+}
+
+Write-Host "User $sam is completed"
+
+#*****************Step 2******************************
+$MailboxDetails = Get-Mailbox $UPN
+$MailboxDetails | fl > "F:\MailboxDetails\$UPN.txt"
+Write-Host "$sam Mailbox Attributes are Exported"
+
+Disable-Mailbox $UPN -Confirm:$false
+Write-Host "$sam Mailbox is Disabled"
+
+$Rmb = Enable-RemoteMailbox $UPN -RemoteRoutingAddress "$sam@mobitelcrm.mail.onmicrosoft.com"
+Write-Host "$sam Remote Mailbox is Enabled"
+
+Set-RemoteMailbox $UPN -ExchangeGuid $guid
+Write-Host "$sam Exchange Guid is set"
+
+}catch{
+
+$er = "user:" + $sam + ", Error:" + $Error[0]
+$er >> "F:\PSTBackup\log.txt"
+Write-Host $er
+
+}
+
+
+}
+

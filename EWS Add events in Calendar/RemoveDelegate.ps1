@@ -1,0 +1,35 @@
+$users = Import-Csv "C:\Users\Basim\Documents\H-ONe\LOLC\Calendar\users.csv"
+
+$s = 0
+$e = 0
+$t = 0
+$users | Sort-Object UPN
+#Write-EventLog -LogName Application -Source ADDPERMISSION -EventId 4 -EntryType Information -Message "Started Adding user permission"
+
+foreach($user in $users){  
+    try{
+        if( $t -eq 3000){
+            Import-PSSession $Session -AllowClobber
+            $t = 0
+        }
+        Remove-MailboxFolderPermission -Identity "$($user.UPN):\calendar" -user basim@honelab.onmicrosoft.com -Confirm:$false
+        if($? -eq $false){
+            #Write-Host "True"
+            throw $Error[0].Exception
+        } 
+        #Write-EventLog -LogName Application -Source REMOVEPERMISSION -EventId 4 -EntryType Information -Message "Adding Permisson completed on : $($user.UPN)"
+        $user | Export-Csv "C:\Users\Basim\Documents\H-ONe\LOLC\Calendar\permissionRemoveSuccessUsers.csv" -Append
+        $s++
+    }
+    catch{
+        $ErrorMessage = $_.Exception.Message
+        $FailedItem = $_.Exception.ItemName
+        $errorentry = "Exception occurred on user $($user.UPN). Message ==> $ErrorMessage"
+        #Write-EventLog -LogName Application -Source REMOVEPERMISSION -EventId 1004 -EntryType Error -Message $errorentry
+        $user | Export-Csv "C:\Users\Basim\Documents\H-ONe\LOLC\Calendar\permissionRemoveErrorUsers.csv" -Append
+        $e++
+        continue
+    }
+    $t++
+}
+Remove-PSSession $Session

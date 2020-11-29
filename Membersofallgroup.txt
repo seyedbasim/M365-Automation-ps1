@@ -1,0 +1,13 @@
+$Groups = Get-MsolGroup -All
+$Groups | ForEach-Object {
+ $Group = $_
+ $File = "C:\users\basim\desktop\Group\" + $Group.EmailAddress + ".txt"
+ $GroupObjectID = $Group.ObjectId
+ $Members = Get-MsolGroupMember -GroupObjectId $GroupObjectID
+ $Members | ForEach-Object {
+    $Member = $_
+    $Member.EmailAddress >> $File
+ }
+}
+
+

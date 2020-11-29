@@ -1,0 +1,18 @@
+$File = "C:\users\basim\desktop\GroupList.txt"
+
+$user = Get-MsolUser -UserPrincipalName basim@honelab.onmicrosoft.com
+
+$Groups = Get-MsolGroup -All
+$Groups | ForEach-Object {
+
+$Group = $_
+ $GroupObjectID = $Group.ObjectId
+ $Members = Get-MsolGroupMember -GroupObjectId $GroupObjectID
+
+ $Members | ForEach-Object {
+    $Member = $_
+    If ($user.UserPrincipalName -eq $Member.EmailAddress){
+	$user.UserPrincipalName + " " + $Group.DisplayName + " " + $Group.GroupType >> $file	
+    }
+ }
+}

@@ -1,0 +1,19 @@
+$exchangeSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "https://outlook.office365.com/powershell-liveid/" -Credential $credential -Authentication "Basic" -AllowRedirection
+Import-PSSession $exchangeSession -DisableNameChecking
+
+Add-MailboxPermission -Identity "Irfan.siddique@midassafety.onmicrosoft.com" -User "rehan.alam@midassafety.com" -AccessRights ReadPermission -InheritanceType All
+Add-MailboxFolderPermission
+
+Add-MailboxFolderPermission -Identity ayla@contoso.com:\inbox -User ed@contoso.com ReadPermission -InheritanceType All
+Add-MailboxFolderPermission -Identity ayla@contoso.com -User ed@contoso.com ReadPermission -InheritanceType All
+
+Irfan.siddique@midassafety.onmicrosoft.com to rehan.alam@midassafety.com.
+
+Remove-MailboxPermission -Identity "h1admin@midassafety.onmicrosoft.com" -User "rehan.alam@midassafety.com" -AccessRights ReadPermission -InheritanceType All
+Remove-MailboxPermission -Identity "Irfan.siddique@midassafety.onmicrosoft.com" -User "h1admin@midassafety.onmicrosoft.com" -AccessRights FullAccess -InheritanceType All
+
+Add-MailboxFolderPermission
+
+
+
+

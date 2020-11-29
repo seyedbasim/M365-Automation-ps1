@@ -1,0 +1,18 @@
+Create the StrongAuthenticationRequirement object
+
+$mf= New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
+$mf.RelyingParty = "*"
+$mf.State = "Enabled" / "Enforced"
+$mfa = @($mf)
+
+Enable MFA for specific user
+
+Set-MsolUser -UserPrincipalName mfatest1@honelab.onmicrosoft.com -StrongAuthenticationRequirements $mfa
+
+Disable MFA for specific user
+
+$mfa = @()
+Set-MsolUser -UserPrincipalName eshlomo@elishlomo.us -StrongAuthenticationRequirements $mfa
+
+
+

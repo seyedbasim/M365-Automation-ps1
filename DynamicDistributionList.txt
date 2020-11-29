@@ -1,0 +1,16 @@
+$File = "C:\users\basim\desktop\DynamicGroupList.txt"
+"UPN,Group,GroupEmailAddress" >> $file
+$user = Get-User basim
+
+$DynamicGroups = Get-DynamicDistributionGroup
+$DynamicGroups | ForEach-Object {
+   $Dg = $_
+   $DynamicGroup = Get-DynamicDistributionGroup $Dg.PrimarySmtpAddress
+   $Members = Get-Recipient -RecipientPreviewFilter $DynamicGroup.RecipientFilter
+    $Members | ForEach-Object {
+       $Member = $_
+       If ($user.UserPrincipalName -eq $Member.PrimarySmtpAddress){
+	  $user.UserPrincipalName + "," + $Dg.DisplayName + "," + $Dg.PrimarySmtpAddress >> $file	
+       }
+    }
+}

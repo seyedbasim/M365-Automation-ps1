@@ -1,0 +1,17 @@
+Get-MsolGroup
+
+$mf= New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
+$mf.RelyingParty = "*"
+$mfa = @($mf)
+
+$users = Get-MsolGroupMember -GroupObjectId f487f2ad-6698-4f14-a938-06f2d2cb2bbb
+$users | ForEach-Object {
+ 
+ $user = Get-MsolUser -UserPrincipalName $_.EmailAddress
+ If ($user.StrongAuthenticationRequirements.State -ne $null){
+	$user.UserPrincipalName + " Enabled"
+	}else{
+	$user.UserPrincipalName + " Disabled"
+	Set-MsolUser -UserPrincipalName $_.EmailAddress -StrongAuthenticationRequirements $mfa
+	}
+}
